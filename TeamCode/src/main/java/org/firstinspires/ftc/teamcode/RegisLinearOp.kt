@@ -6,17 +6,14 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple.Direction.FORWARD
 import com.qualcomm.robotcore.hardware.HardwareMap
 
 open class RegisLinearOp : LinearOpMode() {
-    lateinit var rightFrontMotor : DcMotor
-    lateinit var rightBackMotor : DcMotor
-    lateinit var leftFrontMotor : DcMotor
-    lateinit var leftBackMotor : DcMotor
+    protected lateinit var rightFrontMotor : DcMotor
+    protected lateinit var rightBackMotor : DcMotor
+    protected lateinit var leftFrontMotor : DcMotor
+    protected lateinit var leftBackMotor : DcMotor
 
     private inline fun <reified T> HardwareMap.getType(name: String) = get(T::class.java, name)
 
     override fun runOpMode() {
-    }
-
-    fun initMotors() {
         rightFrontMotor = hardwareMap.getType("Top Right")
         rightBackMotor = hardwareMap.getType("Bottom Right")
         leftFrontMotor = hardwareMap.getType("Top Left")
@@ -25,5 +22,9 @@ open class RegisLinearOp : LinearOpMode() {
         rightBackMotor.direction = FORWARD
         leftFrontMotor.direction = FORWARD
         leftBackMotor.direction = FORWARD
+
+        telemetry.addData("Status", "Initialized")
+        telemetry.update()
+        waitForStart()
     }
 }

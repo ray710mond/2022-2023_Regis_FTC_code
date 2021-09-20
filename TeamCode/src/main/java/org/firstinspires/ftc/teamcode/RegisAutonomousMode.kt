@@ -4,9 +4,8 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous
 
 @Autonomous
 class RegisAutonomousMode : RegisLinearOp() {
-
     override fun runOpMode() {
-        initMotors()
+        super.runOpMode()
 
     }
 }
