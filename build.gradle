@@ -4,19 +4,24 @@
  * It is extraordinarily rare that you will ever need to edit this file.
  */
 
-configurations {
-    doc { transitive false }
-}
-
 buildscript {
+    ext.kotlin_version = '1.5.31'
     repositories {
         mavenCentral()
         google()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.1'
+        classpath 'com.android.tools.build:gradle:7.0.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
+}
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
+}
+
+configurations {
+    doc { transitive false }
 }
 
 // This is now required because aapt2 has to be downloaded from the
