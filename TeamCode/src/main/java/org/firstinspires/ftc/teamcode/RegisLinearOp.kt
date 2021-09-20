@@ -18,8 +18,8 @@ open class RegisLinearOp : LinearOpMode() {
         rightBackMotor = hardwareMap.getType("Bottom Right")
         leftFrontMotor = hardwareMap.getType("Top Left")
         leftBackMotor = hardwareMap.getType("Bottom Left")
-        rightFrontMotor.direction = FORWARD
-        rightBackMotor.direction = FORWARD
+        rightFrontMotor.direction = REVERSE
+        rightBackMotor.direction = REVERSE
         leftFrontMotor.direction = FORWARD
         leftBackMotor.direction = FORWARD
 
