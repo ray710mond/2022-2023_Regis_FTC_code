@@ -9,7 +9,7 @@ open class RegisLinearOp : LinearOpMode() {
     protected lateinit var rightFrontMotor : DcMotor
     protected lateinit var rightBackMotor : DcMotor
     protected lateinit var leftFrontMotor : DcMotor
-    protected lateinit var leftBackMotor : servo
+    protected lateinit var leftBackMotor : DcMotor
 
     private inline fun <reified T> HardwareMap.getType(name: String) = get(T::class.java, name)
 
