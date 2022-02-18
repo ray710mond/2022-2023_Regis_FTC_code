@@ -15,7 +15,7 @@ public class RegisLinearOp extends LinearOpMode {
     public DcMotor leftBackMotor = null;
     public DcMotor armMotor = null;
     public DcMotor intakeMotor = null;
-    public Servo shootSwitch = null;
+    public Servo servo = null;
     
     public final static double servoHome = 0.0;
     public final static double servoMin = 0.0;
