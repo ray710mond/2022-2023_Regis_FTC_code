@@ -24,6 +24,12 @@ public class RegisLinearOp extends LinearOpMode {
     @Override
 
     public void runOpMode() {
+        // Front Right - Port 0 Control Hub
+        // Front Left - Port 0 Expansion Hub
+        // Back Right - Port 1 Control Hub
+        // Back Left - Port 2 Expansion Hub
+        // Linear Slide Motor - Port 3 Expansion Hub
+
         rightFrontMotor = hardwareMap.get(DcMotor.class, "Top Right");
         rightBackMotor = hardwareMap.get(DcMotor.class, "Bottom Right");
         leftFrontMotor = hardwareMap.get(DcMotor.class, "Top Left");
@@ -34,9 +40,9 @@ public class RegisLinearOp extends LinearOpMode {
         servo.setPosition(servoHome);
 
         rightFrontMotor.setDirection(DcMotor.Direction.REVERSE);
-        rightBackMotor.setDirection(DcMotor.Direction.FORWARD);
+        rightBackMotor.setDirection(DcMotor.Direction.REVERSE);
         leftFrontMotor.setDirection(DcMotor.Direction.FORWARD);
-        leftBackMotor.setDirection(DcMotor.Direction.FORWARD);
+        leftBackMotor.setDirection(DcMotor.Direction.REVERSE);
         armMotor.setDirection(DcMotor.Direction.FORWARD);
         //intakeMotor.setDirection(DcMotor.Direction.FORWARD);
         
