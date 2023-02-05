@@ -18,9 +18,8 @@ public class RegisLinearOp extends LinearOpMode {
     public Servo servo = null;
     
     public final static double servoHome = 0.0;
-    public final static double servoMin = 0.0;
-    public final static double servoMax = 0.3;
-
+    public final static double servoClose = 0.0;
+    public final static double servoOpen = 0.3;
     @Override
 
     public void runOpMode() {
@@ -55,7 +54,7 @@ public class RegisLinearOp extends LinearOpMode {
         //intakeMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         //intakeMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         //armMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        armMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        //armMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         
         
 

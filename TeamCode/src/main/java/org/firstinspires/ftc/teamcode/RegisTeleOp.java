@@ -30,13 +30,18 @@ public class RegisTeleOp extends RegisLinearOp {
             rightBackMotor.setPower((X + Y - R) / max);
             leftFrontMotor.setPower((X + Y + R) / max);
             leftBackMotor.setPower((-X + Y + R) / max);
-            armMotor
+            armMotor.setPower((RT-LT));
             
             servoPosition = Range.clip(servoPosition, servoMax, servoMin);
             servo.setPosition(servoPosition);
-
-                telemetry.addData("Status", "Running");
-                telemetry.update();
+            if (gamepad1.x && servoPosition == servoOpen){
+                servoPosition = servoClose;
+            }
+            if (gamepad1.x && servoPosition == servoClose){
+                servoPosition = servoOpen;
+            }
+            telemetry.addData("Status", "Running");
+            telemetry.update();
         }
     }
 }
