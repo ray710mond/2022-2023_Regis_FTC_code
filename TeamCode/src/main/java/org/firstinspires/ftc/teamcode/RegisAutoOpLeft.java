@@ -55,15 +55,17 @@ import com.qualcomm.robotcore.util.Range;
 public class RegisAutoOpLeft extends RegisLinearOp {
 
     // Declare OpMode members.
+    public void pickupCone(){
+        servo.setPosition(servoOpen);
+        armMotor.setPower(0);
+        servo.setPosition(servoClose);
+        armMotor.setPower(0.9);
+    }
     private ElapsedTime runtime = new ElapsedTime();
-
-
     public void runOpMode() {
         super.runOpMode();
         telemetry.addData("Status", "Initialized");
         telemetry.update();
-
-
 
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
