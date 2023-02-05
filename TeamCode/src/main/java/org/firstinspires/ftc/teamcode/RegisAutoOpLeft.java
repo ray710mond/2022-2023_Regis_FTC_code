@@ -80,31 +80,37 @@ public class RegisAutoOpLeft extends RegisLinearOp {
             double Y = 0;
             double R = 0;
             double turn = 751.8*2;
+            double drive1 = 1/1;
+            double strafe1 = 1/1;
 
             max = Math.abs(X*X) + Math.abs(Y*Y) + rot * Math.abs(R*R);
 
             max = (max < 1)? 1: max;
 
             sleep(1000);
-            X = -1;
+            Y = 1 * drive1;
+            rightFrontMotor.setPower((-X + Y - R) / max);
+            rightBackMotor.setPower((X + Y - R) / max);
+            leftFrontMotor.setPower((X + Y + R) / max);
+            leftBackMotor.setPower((-X + Y + R) / max);
+            pickupCone();
+            sleep(1000);
+            Y = 0;
+            sleep(1000);
+            X = 1 * strafe1;
             rightFrontMotor.setPower((-X + Y - R) / max);
             rightBackMotor.setPower((X + Y - R) / max);
             leftFrontMotor.setPower((X + Y + R) / max);
             leftBackMotor.setPower((-X + Y + R) / max);
             sleep(1000);
-            X = 0;
-            sleep(1000);
-            Y = 1;
+            Y = 1 * drive1;
+            servo.setPosition(servoOpen);
+            Y = 0;
             rightFrontMotor.setPower((-X + Y - R) / max);
             rightBackMotor.setPower((X + Y - R) / max);
             leftFrontMotor.setPower((X + Y + R) / max);
             leftBackMotor.setPower((-X + Y + R) / max);
-            sleep(1000);
-            Y=0;
-            rightFrontMotor.setPower((-X + Y - R) / max);
-            rightBackMotor.setPower((X + Y - R) / max);
-            leftFrontMotor.setPower((X + Y + R) / max);
-            leftBackMotor.setPower((-X + Y + R) / max);
+            X = -1 * strafe1;
             
 
             // Show the elapsed game time and wheel power.
