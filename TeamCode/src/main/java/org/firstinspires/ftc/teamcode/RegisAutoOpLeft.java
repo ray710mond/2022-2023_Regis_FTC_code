@@ -88,7 +88,7 @@ public class RegisAutoOpLeft extends RegisLinearOp {
             rightFrontMotor.setPower((-X + Y - R) / max);
             rightBackMotor.setPower((X + Y - R) / max);
             leftFrontMotor.setPower((X + Y + R) / max);
-            leftBackMotor.setPower((-X - Y + R) / max);
+            leftBackMotor.setPower((-X + Y + R) / max);
             sleep(1000);
             X = 0;
             sleep(1000);
