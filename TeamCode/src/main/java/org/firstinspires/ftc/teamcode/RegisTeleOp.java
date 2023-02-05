@@ -13,9 +13,6 @@ public class RegisTeleOp extends RegisLinearOp {
     final double servoSpeed = .01;
     public void runOpMode() {
         super.runOpMode();
-        if(opModeIsActive()){
-            servoPosition = servoClose;
-        }
         while (opModeIsActive()) {
             double max;
             double rot = 0.5;
