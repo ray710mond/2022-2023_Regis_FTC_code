@@ -10,6 +10,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 @TeleOp(name="RegisTeleOp", group="Linear Opmode")
 public class RegisTeleOp extends RegisLinearOp {
     final double servoSpeed = .01;
+    final double linslideSpeed = 2;
     public void runOpMode() {
         super.runOpMode();
         while (opModeIsActive()) {
@@ -38,7 +39,7 @@ public class RegisTeleOp extends RegisLinearOp {
             leftBackMotor.setPower((X + Y + R) / max);
             telemetry.addData("LB Motor Power: ", leftBackMotor.getPower());
             telemetry.update();
-            armMotor.setPower(RT - LT);
+            armMotor.setPower(linslidespeed * (RT - LT));
             telemetry.addData("Arm Motor Power: ", armMotor.getPower());
             telemetry.update();
             
