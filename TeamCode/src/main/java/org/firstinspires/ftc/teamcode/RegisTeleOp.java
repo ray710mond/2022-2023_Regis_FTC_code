@@ -39,8 +39,7 @@ public class RegisTeleOp extends RegisLinearOp {
             leftBackMotor.setPower((X + Y + R) / max);
             telemetry.addData("LB Motor Power: ", leftBackMotor.getPower());
             telemetry.update();
-            armMotor.setPower(armMotor.getPower() - LT);
-            armMotor.setPower(armMotor.getPower() + RT);
+            armMotor.setPower(RT - LT);
             telemetry.addData("Arm Motor Power: ", armMotor.getPower());
             telemetry.update();
             
