@@ -26,10 +26,10 @@ public class RegisTeleOp extends RegisLinearOp {
 
             max = (max < 1)? 1: max;
 
-            rightFrontMotor.setPower((-X + Y - R) / max);
-            rightBackMotor.setPower((X + Y - R) / max);
-            leftFrontMotor.setPower((X + Y + R) / max);
-            leftBackMotor.setPower((-X + Y + R) / max);
+            rightFrontMotor.setPower((X + Y - R) / max);
+            rightBackMotor.setPower((-X + Y - R) / max);
+            leftFrontMotor.setPower((-X + Y + R) / max);
+            leftBackMotor.setPower((X + Y + R) / max);
             armMotor.setPower((RT-LT));
             
             servoPosition = Range.clip(servoPosition, servoMax, servoMin);
