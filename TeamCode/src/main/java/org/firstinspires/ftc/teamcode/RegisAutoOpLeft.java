@@ -81,7 +81,7 @@ public class RegisAutoOpLeft extends RegisLinearOp {
             double R = 0;
             double turn = 751.8*2;
             double drive1 = 1/1;
-            double strafe1 = 1/1;
+            double strafe1 = 1/180;
 
             max = Math.abs(X*X) + Math.abs(Y*Y) + rot * Math.abs(R*R);
 
@@ -110,7 +110,8 @@ public class RegisAutoOpLeft extends RegisLinearOp {
             rightBackMotor.setPower((X + Y - R) / max);
             leftFrontMotor.setPower((X + Y + R) / max);
             leftBackMotor.setPower((-X + Y + R) / max);
-            X = 1 * strafe1;
+            X = 0;
+            X = -60 * strafe1;
             
 
             // Show the elapsed game time and wheel power.
