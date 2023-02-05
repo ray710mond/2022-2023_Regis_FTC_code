@@ -29,7 +29,7 @@ public class RegisLinearOp extends LinearOpMode {
         leftFrontMotor = hardwareMap.get(DcMotor.class, "Top Left");
         leftBackMotor = hardwareMap.get(DcMotor.class, "Bottom Left");
         armMotor = hardwareMap.get(DcMotor.class, "Arm Motor");
-        intakeMotor = hardwareMap.get(DcMotor.class, "Intake Motor");
+        //intakeMotor = hardwareMap.get(DcMotor.class, "Intake Motor");
         servo = hardwareMap.get(Servo.class, "Servo");
         servo.setPosition(servoHome);
 
@@ -38,16 +38,16 @@ public class RegisLinearOp extends LinearOpMode {
         leftFrontMotor.setDirection(DcMotor.Direction.FORWARD);
         leftBackMotor.setDirection(DcMotor.Direction.FORWARD);
         armMotor.setDirection(DcMotor.Direction.FORWARD);
-        intakeMotor.setDirection(DcMotor.Direction.FORWARD);
+        //intakeMotor.setDirection(DcMotor.Direction.FORWARD);
         
 
         //rightFrontMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODERS);
         //rightBackMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODERS);
         //leftFrontMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODERS);
         //leftBackMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODERS);
-        intakeMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODERS);
+        //intakeMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODERS);
         //intakeMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        intakeMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        //intakeMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         //armMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         armMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         
