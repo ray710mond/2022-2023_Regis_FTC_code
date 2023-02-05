@@ -43,27 +43,27 @@ public class RegisTeleOp extends RegisLinearOp {
                 
             }
 
-        if (gamepad2.left_bumper){
-        armMotor.setPower(-.15);
-        }
-        else if (!gamepad2.right_bumper && !gamepad1.left_bumper) {
-        armMotor.setPower(0);
-        }
-        else if (gamepad2.right_bumper) {
-        armMotor.setPower(.15);
-        }
-        
-        if (gamepad2.x){
-            servoPosition += servoSpeed;
-        }else if (gamepad2.a){
-            servoPosition += servoSpeed;
-        }
-        
-        servoPosition = Range.clip(servoPosition, servoMax, servoMin);
-        servo.setPosition(servoPosition);
+            if (gamepad2.left_bumper){
+            armMotor.setPower(-.15);
+            }
+            else if (!gamepad2.right_bumper && !gamepad1.left_bumper) {
+            armMotor.setPower(0);
+            }
+            else if (gamepad2.right_bumper) {
+            armMotor.setPower(.15);
+            }
+            
+            if (gamepad2.x){
+                servoPosition += servoSpeed;
+            }else if (gamepad2.a){
+                servoPosition += servoSpeed;
+            }
+            
+            servoPosition = Range.clip(servoPosition, servoMax, servoMin);
+            servo.setPosition(servoPosition);
 
-            telemetry.addData("Status", "Running");
-            telemetry.update();
+                telemetry.addData("Status", "Running");
+                telemetry.update();
         }
     }
 }
