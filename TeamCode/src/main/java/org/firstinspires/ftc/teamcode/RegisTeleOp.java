@@ -41,6 +41,8 @@ public class RegisTeleOp extends RegisLinearOp {
                 servoPosition = servoOpen;
             }
             telemetry.addData("Status", "Running");
+            telemetry.addData("Arm Motor Power: ", armMotor.getPower());
+            telemetry.addData("Servo Position: ", servo.getPosition());
             telemetry.update();
         }
     }
