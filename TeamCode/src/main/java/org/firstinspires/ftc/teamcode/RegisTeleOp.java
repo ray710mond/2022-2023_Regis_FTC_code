@@ -23,6 +23,7 @@ public class RegisTeleOp extends RegisLinearOp {
             double Y = -gamepad1.left_stick_y;
             double R = gamepad1.right_stick_x;
             double LT = gamepad1.left_trigger;
+            double RT = gamepad1.right_trigger;
 
 
             max = Math.abs(X*X) + Math.abs(Y*Y) + rot * Math.abs(R*R);
@@ -41,7 +42,7 @@ public class RegisTeleOp extends RegisLinearOp {
             leftBackMotor.setPower((X + Y + R) / max);
             telemetry.addData("LB Motor Power: ", leftBackMotor.getPower());
             telemetry.update();
-            armMotor.setPower(gamepad1.right_trigger);
+            armMotor.setPower(RT-LT);
             telemetry.addData("Arm Motor Power: ", armMotor.getPower());
             telemetry.update();
             
