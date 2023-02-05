@@ -9,7 +9,6 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 @TeleOp(name="RegisTeleOp", group="Linear Opmode")
 public class RegisTeleOp extends RegisLinearOp {
-    double servoPosition = servoHome;
     final double servoSpeed = .01;
     public void runOpMode() {
         super.runOpMode();
@@ -43,16 +42,16 @@ public class RegisTeleOp extends RegisLinearOp {
             telemetry.addData("Arm Motor Power: ", armMotor.getPower());
             telemetry.update();
             
-            if (gamepad1.x){
-                servo.setPosition(servoOpen);
-            }
-            if (gamepad1.y){
+            if (gamepad1.x && servo.getPosition() == servoOpen){
                 servo.setPosition(servoClose);
             }
+            else if (gamepad1.x && servo.getPosition() == servoClose){
+                servo.setPosition(servoOpen);
+            }
+        }
             telemetry.addData("Servo Position: ", servo.getPosition());
             telemetry.update();
             telemetry.addData("Status", "Running");
             telemetry.update();
         }
     }
-}

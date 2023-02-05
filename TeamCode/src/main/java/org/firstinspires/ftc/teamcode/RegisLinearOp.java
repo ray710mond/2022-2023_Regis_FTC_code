@@ -17,9 +17,9 @@ public class RegisLinearOp extends LinearOpMode {
     public DcMotor intakeMotor = null;
     public Servo servo = null;
     
-    public final static double servoHome = 0.5;
-    public final static double servoClose = 0.5;
-    public final static double servoOpen = -0.2;
+    public final static double servoHome = -0.2;
+    public final static double servoOpen = 0.7;
+    public final static double servoClose = -0.2;
     @Override
 
     public void runOpMode() {
