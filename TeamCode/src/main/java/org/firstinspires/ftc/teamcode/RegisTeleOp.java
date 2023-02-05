@@ -12,7 +12,7 @@ public class RegisTeleOp extends RegisLinearOp {
     final double servoSpeed = .01;
     public void runOpMode() {
         super.runOpMode();
-        while (opModeIsActive()) {
+        while (OpModeIsActive()) {
             double max;
             double rot = 0.5;
             double X = gamepad1.left_stick_x;
