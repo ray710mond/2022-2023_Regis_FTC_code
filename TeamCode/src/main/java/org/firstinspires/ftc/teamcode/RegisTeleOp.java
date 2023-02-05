@@ -44,10 +44,10 @@ public class RegisTeleOp extends RegisLinearOp {
             telemetry.update();
             
             if (gamepad1.x){
-                servoPosition = servoOpen;
+                servo.setPosition(servoOpen);
             }
             if (gamepad1.y){
-                servoPosition = servoClose;
+                servo.setPosition(servoClose);
             }
             telemetry.addData("Servo Position: ", servo.getPosition());
             telemetry.update();
