@@ -18,7 +18,6 @@ public class RegisTeleOp extends RegisLinearOp {
             double X = gamepad1.left_stick_x;
             double Y = -gamepad1.left_stick_y;
             double R = gamepad1.right_stick_x;
-            double RT = gamepad.right_trigger;
             double LT = gamepad.left_trigger;
 
 
@@ -28,14 +27,19 @@ public class RegisTeleOp extends RegisLinearOp {
 
             rightFrontMotor.setPower((X + Y - R) / max);
             telemetry.addData("RF Motor Power: ", rightFrontMotor.getPower());
+            telemetry.update();
             rightBackMotor.setPower((-X + Y - R) / max);
             telemetry.addData("RB Motor Power: ", rightBackMotor.getPower());
+            telemetry.update();
             leftFrontMotor.setPower((-X + Y + R) / max);
             telemetry.addData("LF Motor Power: ", leftFrontMotor.getPower());
+            telemetry.update();
             leftBackMotor.setPower((X + Y + R) / max);
             telemetry.addData("LB Motor Power: ", leftBackMotor.getPower());
-            armMotor.setPower(RT);
+            telemetry.update();
+            armMotor.setPower(gamepad1.right_trigger);
             telemetry.addData("Arm Motor Power: ", armMotor.getPower());
+            telemetry.update();
             
             servoPosition = Range.clip(servoPosition, servoMax, servoMin);
             servo.setPosition(servoPosition);
@@ -46,6 +50,7 @@ public class RegisTeleOp extends RegisLinearOp {
                 servoPosition = servoClose;
             }
             telemetry.addData("Servo Position: ", servo.getPosition());
+            telemetry.update();
             telemetry.addData("Status", "Running");
             telemetry.update();
         }
